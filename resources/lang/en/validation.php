@@ -145,6 +145,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'orig_url' => 'original URL',
+        'description' => 'description'
+    ],
 
 ];
