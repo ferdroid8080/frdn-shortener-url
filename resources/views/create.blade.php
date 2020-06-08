@@ -60,7 +60,9 @@ Create
         @endif
         @if (session('success'))
             <div class="alert alert-success">
-                {{ session('success') }}
+                <ul>
+                    <li>{{ session('success') }}</li>
+                </ul>
             </div>
         @endif
         <div class="row mt-8">
@@ -68,11 +70,11 @@ Create
                 @csrf
                 <div class="row">
                     <div class="input-field col s6">
-                        <input type="text" name="orig_url" />
+                        <input type="text" name="orig_url" value="{{ old('orig_url') }}" />
                         <label>@lang('custom.create_form_url_label')</label>
                     </div>
                     <div class="input-field col s6">
-                        <input type="text" name="description" />
+                        <input type="text" name="description" value="{{ old('description')}}" />
                         <label>@lang('custom.create_form_description_label')</label>
                     </div>
                 </div>
