@@ -14,6 +14,8 @@ class CreateLinksTable extends Migration
     public function up()
     {
         Schema::create('links', function (Blueprint $table) {
+            $table->engine = 'myisam';
+
             $table->bigIncrements('id');
             $table->text('orig_url');
             $table->string('shortened_url', 15)->index()->unique(); // https://frdn.link/d975e38 -> string generado con uniqid(prefix: frdn_) y md5 y substring(8)
