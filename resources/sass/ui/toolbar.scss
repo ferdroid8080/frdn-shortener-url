@@ -1,0 +1,57 @@
+.toolbar {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+
+    .navigation {
+        display: flex;
+        align-items: flex-end;
+
+        .header {
+            margin-right: 1.2rem;
+            h2 {
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            li {
+                box-sizing: border-box;
+                padding: .9rem 0rem;
+                a {
+                    padding: .9rem;
+                    color: $grayish-violet;
+                    text-decoration: none;
+                    font-weight: $font-small-weight;
+                    font-size: .7em;
+                    &:hover {
+                        color: $gray;
+                    }
+                }
+            }
+        }
+    }
+
+    .actions {
+        margin: 0;
+        padding: 0;
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            li {
+                box-sizing: border-box;
+                padding: .8rem 0rem;
+                margin-right: 1rem;
+            }
+        }
+    }
+
+}

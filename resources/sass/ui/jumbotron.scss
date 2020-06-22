@@ -1,0 +1,28 @@
+.jumbotron {
+    display: flex;
+    margin: 1.5rem 0rem;
+    padding: 0;
+    height: 430px;
+    position: relative;
+
+    .jumbotron-header {
+        margin: 0;
+        padding: 0;
+        header {
+            h1, h4 {
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+
+    .illustration {
+        position: absolute;
+        top: 0;
+        right: -220px;
+        background: url('../../images/illustration-working.svg') center center no-repeat;
+        background-size: 100%;
+        width: 45%;
+        height: 100%;
+    }
+}

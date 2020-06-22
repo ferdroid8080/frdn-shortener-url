@@ -1,8 +1,44 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
 
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+html, body {
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+    font-weight: $font-small-weight;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0;
+    padding: 1.3rem 0rem;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.button {
+    font: inherit;
+    font-size: .7rem;
+    font-weight: $font-huge-weight;
+    background: none;
+    border: none;
+    color: $gray;
+    padding: .5rem 1.2rem;
+    cursor: pointer;
+}
+
+.button-primary {
+    background-color: $primary-color;
+    color: $white;
+}
+
+.button-rounded {
+    border-radius: 1.2rem;
+}
+
+@import 'ui/toolbar';
+@import 'ui/jumbotron';
+
