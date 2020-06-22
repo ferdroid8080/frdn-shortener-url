@@ -1,0 +1,115 @@
+.advanced-stats {
+    background-color: rgba($color: $gray, $alpha: 0.2);
+    position: relative;
+    flex: 1 0 auto;
+    height: 760px;
+    margin: 4.5em 0rem 0em 0rem;
+
+    .advanced-stats-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        height: 100%;
+        padding: 4.5rem 0rem;
+
+
+        .header {
+            h2, h4 {
+                margin: .4rem 0rem;
+                padding: 0;
+            }
+            h2 {
+                font-size: 2.4em;
+                font-weight: $font-huge-weight;
+            }
+            h4 {
+                font-size: 1em;
+                color: $gray;
+                font-weight: $font-small-weight;
+                line-height: $line-height-def;
+            }
+        }
+
+        .insights-blocks {
+            display: grid;
+            justify-content: space-between;
+            grid-gap: 20px;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin: 3.4rem auto;
+            width: 75%;
+            div {
+                background-color: $white;
+                border-radius: .2rem;
+                padding: 3rem 1.1rem .8rem 1.1rem;
+                position: relative;
+                .icon {
+                    position: absolute;
+                    top: -35px;
+                    left: 25px;
+                    padding: 2rem;
+                    border-radius: 4rem;
+                }
+                h3 {
+                    font-size: .9em;
+                }
+                p {
+                    font-size: .8em;
+                    font-weight: $font-huge-weight;
+                    line-height: $line-height-def;
+                    color: $gray;
+                }
+            }
+            div.brand-recognition {
+                .icon {
+                    background: url('../../images/icon-brand-recognition.svg') no-repeat center $very-dark-violet;
+                    background-size: 40% 40%;
+                }
+            }
+            div.detailed-records {
+                .icon {
+                    background: url('../../images/icon-detailed-records.svg') no-repeat center $very-dark-violet;
+                    background-size: 40% 40%;
+                }
+            }
+            div.fully-custom {
+                .icon {
+                    background: url('../../images/icon-fully-customizable.svg') no-repeat center $very-dark-violet;
+                    background-size: 40% 40%;
+                }
+            }
+        }
+
+    }
+
+
+    .shortener-url {
+        border: 1px solid #ccc;
+        padding: 2rem;
+        width: 75%;
+        border-radius: .9rem;
+
+        background: url('../../images/bg-shorten-desktop.svg') no-repeat center $primary-2;
+        background-size: cover;
+
+        position: absolute;
+        top: -50px;
+        left: 10%;
+
+        .form-control {
+            input {
+                font: inherit;
+                color: $gray;
+                font-size: 1em;
+                padding: 1em;
+                border: none;
+                border-radius: .3rem;
+                box-sizing: border-box;
+                width: 100%;
+            }
+        }
+    }
+
+}
+

@@ -2,27 +2,45 @@
     display: flex;
     margin: 1.5rem 0rem;
     padding: 0;
-    height: 430px;
-    position: relative;
+    height: 450px;
+    align-items: center;
+
+    .jumbotron-left-space {
+        flex: .35;
+    }
+
 
     .jumbotron-header {
         margin: 0;
         padding: 0;
+        flex: 1;
+
         header {
             h1, h4 {
-                margin: 0;
+                margin: .8rem 0rem;
                 padding: 0;
+            }
+            h1 {
+                font-size: 3.4em;
+                font-weight: $font-huge-weight;
+            }
+            h4 {
+                color: $gray;
+                font-weight: $font-small-weight;
+                font-size: 1.1em;
+                line-height: $line-height-def;
             }
         }
     }
 
-    .illustration {
-        position: absolute;
-        top: 0;
-        right: -220px;
-        background: url('../../images/illustration-working.svg') center center no-repeat;
-        background-size: 100%;
-        width: 45%;
+    .illustration-block {
+        flex: 1.5;
         height: 100%;
     }
+}
+
+.illustration {
+    background: url('../../images/illustration-working.svg') no-repeat;
+    background-size: 52%;
+    background-position: right -85px bottom 0px;
 }

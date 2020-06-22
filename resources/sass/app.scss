@@ -14,9 +14,15 @@ html, body {
 
 .container {
     margin: 0;
-    padding: 1.3rem 0rem;
-    margin: 0 auto;
-    width: 80%;
+    padding: 1.3rem 0rem 0rem 0rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    .inner-container {
+        margin: 0 auto;
+        width: 75%;
+    }
 }
 
 .button {
@@ -39,6 +45,65 @@ html, body {
     border-radius: 1.2rem;
 }
 
+.button-slightly-rounded {
+    border-radius: .3rem;
+}
+
+.button-large {
+    font-size: .9em;
+    padding: .8rem 1.8rem;
+    margin: .9rem 0rem;
+}
+
+.button-large-form {
+    padding: 1em 2.2em;
+    font-size: .8em;
+    height: 54px;
+    box-sizing: border-box;
+}
+
+.text-center {
+    text-align: center;
+}
+
+form.form-horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .form-control {
+        margin: 0rem .6rem;
+        padding: 0;
+        flex: 2;
+    }
+}
+
 @import 'ui/toolbar';
 @import 'ui/jumbotron';
+@import 'ui/advanced-stats';
+
+.call-action{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: url('../images/bg-boost-desktop.svg') no-repeat center $primary-2;
+    background-size: cover;
+
+    padding: 1.2rem 0rem;
+
+    .header {
+        margin: 0;
+        padding: 0;
+        h3 {
+            font-size: 1.5em;
+            margin: .8rem 0rem;
+            padding: 0;
+            color: $white;
+        }
+    }
+
+}
+
+@import 'ui/footer';
+
 

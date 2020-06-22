@@ -1,28 +1,26 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import Toolbar from '../UI/Toolbar'
-// import illustration_working from '../../../images/illustration-working.svg'
 
 
 const layout = props => {
 
     return (
-        <div className='container'>
-            <Toolbar brandName='Frdn link shortener' />
-            <div className="jumbotron">
-                <div className="jumbotron-header">
-                    <header>
-                        <h1>More than just shorter links</h1>
-                        <h4>
-                            Build your brand's reconignition and get detailed
-                            insights on how your links are performing.
-                        </h4>
-                    </header>
+        <Fragment>
+            <div className="container">
+                <div className="inner-container">
+                    <Toolbar brandName='Frdn link shortener' />
                 </div>
-                <div className="illustration"></div>
+                {props.children}
             </div>
-            {props.children}
-        </div>
+            <div className="footer-info">
+                <div className="header">
+                    <div className="logo"></div>
+                </div>
+                <div className="footer-links"></div>
+                <div className="footer-social-links"></div>
+            </div>
+        </Fragment>
     )
 }
 
