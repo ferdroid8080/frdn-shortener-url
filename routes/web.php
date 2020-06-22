@@ -11,13 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/{route?}', function () {
+    return view('main');
+})->where('route', '[0-9A-Za-z.\/?]+');
 
 
-Route::get('/{query}', 'LinksController@getFullUrl');
-Route::get('/new/link', 'LinksController@create');
+Route::get('/s/{query}', 'LinksController@getFullUrl');
 Route::post('/new/link', 'LinksController@store');
-
 Route::get('/shorten/{url}', 'LinksController@short');
+
+// Route::get('/new/link', 'LinksController@create');
+
+
+
