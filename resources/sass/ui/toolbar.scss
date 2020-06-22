@@ -10,9 +10,10 @@
 
         .header {
             margin-right: 1.2rem;
-            h2 {
-                margin: 0;
-                padding: 0;
+            .logo {
+                background: url('../../images/logo.svg') left no-repeat;
+                width: 150px;
+                height: 50px;
             }
         }
 

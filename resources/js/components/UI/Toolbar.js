@@ -1,6 +1,6 @@
 import React from 'react'
 
-import logo from '../../../images/logo.svg'
+import Button from '../UI/Button'
 
 
 const toolbar = props => {
@@ -9,9 +9,7 @@ const toolbar = props => {
         <div className='toolbar'>
             <div className="navigation">
                 <div className="header">
-                    <h2>
-                        <img src={logo} alt={props.brandName} />
-                    </h2>
+                    <div className="logo"></div>
                 </div>
                 <div className="pages">
                     <ul>
@@ -21,8 +19,8 @@ const toolbar = props => {
             </div>
             <div className="actions">
                 <ul>
-                    <li><button className='button'>Login</button></li>
-                    <li><button className='button button-primary button-rounded'>Sign Up</button></li>
+                    <li><Button classes={['button']}>Login</Button></li>
+                    <li><Button classes={['button', 'button-primary', 'button-rounded']}>Sign up</Button></li>
                 </ul>
             </div>
         </div>
