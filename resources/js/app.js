@@ -2,8 +2,22 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 
 import Layout from './components/UI/Layout'
+
+import Jumbotron from './components/Jumbotron'
+import Shortener from './components/Shortener'
+
+import Features from './components/UI/Features/Features'
+import FeaturesItem from './components/UI/Features/FeaturesItem'
+
 import Button from './components/UI/Button'
 
+
+
+const FEATURES_LIST = [
+    {id: 100, className: 'brand-recognition', title: 'Brand Recognition', content: 'Boost your brand recognition with each click. Generic links don\'t mean a thing. Branded links help instil confidence in your content.'},
+    {id: 110, className: 'detailed-records', title: 'Detailed Records', content: 'Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.'},
+    {id: 120, className: 'fully-custom', title: 'Fully Customizable', content: 'Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.'}
+]
 
 
 export default class App extends Component {
@@ -11,32 +25,9 @@ export default class App extends Component {
     render() {
         return (
             <Layout>
-                <div className="jumbotron illustration">
-                    <div className="jumbotron-left-space"></div>
-                    <div className="jumbotron-header">
-                        <header>
-                            <h1>More than just shorter links</h1>
-                            <h4>
-                                Build your brand's reconignition and get detailed
-                                insights on how your links are performing.
-                            </h4>
-                            <Button classes={['button', 'button-primary', 'button-rounded', 'button-large']}>Get started</Button>
-                        </header>
-                    </div>
-                    <div className="illustration-block"></div>
-                </div>
+                <Jumbotron />
                 <div className="advanced-stats">
-                    <div className="shortener-url">
-                        <form action="#" className='form-horizontal'>
-                            <div className="form-control">
-                                <input type="text" placeholder='Shorten a link here...' autoComplete='off' />
-                            </div>
-                            <div className="form-control">
-                                <input type="text" placeholder='Place a description for the shortened link' autoComplete='off' />
-                            </div>
-                            <Button classes={['button', 'button-primary', 'button-slightly-rounded', 'button-large-form']}>Shorten It!</Button>
-                        </form>
-                    </div>
+                    <Shortener />
                     <div className="advanced-stats-inner">
                         <div className='header'>
                             <h2 className='text-center'>Advanced Statistics</h2>
@@ -45,37 +36,15 @@ export default class App extends Component {
                                 our advanced statistics dashboard.
                             </h4>
                         </div>
-                        <div className="insights-blocks">
-                            <div className="brand-recognition">
-                                <div className="icon"></div>
-                                <h3>Brand Recognition</h3>
-                                <p>
-                                    Boost your brand recognition with each click.
-                                    Generic links don't mean a thing. Branded links help instil
-                                    confidence in your content.
-                                </p>
-                            </div>
-                            <div className="detailed-records">
-                                <div className="icon"></div>
-                                <h3>Detailed Records</h3>
-                                <p>
-                                    Gain insights into who is clicking
-                                    your links. Knowing when and where
-                                    people engage with your content
-                                    helps inform better decisions.
-                                </p>
-                            </div>
-                            <div className="fully-custom">
-                                <div className="icon"></div>
-                                <h3>Fully Customizable</h3>
-                                <p>
-                                    Improve brand awareness and
-                                    content discoverability through
-                                    customizable links, supercharging
-                                    audience engagement.
-                                </p>
-                            </div>
-                        </div>
+                        <Features>
+                            {
+                                FEATURES_LIST.map(i => (
+                                    <FeaturesItem  featureClass={i.className} featureTitle={i.title}>
+                                        {i.content}
+                                    </FeaturesItem>
+                                ))
+                            }
+                        </Features>
                     </div>
                 </div>
                 <div className="call-action">

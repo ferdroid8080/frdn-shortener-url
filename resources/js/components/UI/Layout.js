@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 
 import Toolbar from '../UI/Toolbar'
-
+import Footer from '../UI/Footer'
 
 const layout = props => {
 
@@ -13,13 +13,7 @@ const layout = props => {
                 </div>
                 {props.children}
             </div>
-            <div className="footer-info">
-                <div className="header">
-                    <div className="logo"></div>
-                </div>
-                <div className="footer-links"></div>
-                <div className="footer-social-links"></div>
-            </div>
+            <Footer />
         </Fragment>
     )
 }
