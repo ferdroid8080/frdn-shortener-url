@@ -1,0 +1,42 @@
+.button {
+    font: inherit;
+    font-size: .7rem;
+    font-weight: $font-huge-weight;
+    background: none;
+    border: none;
+    color: $gray;
+    padding: .5rem 1.2rem;
+    cursor: pointer;
+}
+
+.button-primary {
+    background-color: $primary-color;
+    color: $white;
+    &:hover {
+        background-color: $primary-color-alternate;
+    }
+    &:active {
+        background-color: $very-dark-violet;
+    }
+}
+
+.button-rounded {
+    border-radius: 1.2rem;
+}
+
+.button-slightly-rounded {
+    border-radius: .3rem;
+}
+
+.button-large {
+    font-size: .9em;
+    padding: .8rem 1.8rem;
+    margin: .9rem 0rem;
+}
+
+.button-large-form {
+    padding: 1em 2.2em;
+    font-size: .8em;
+    height: 54px;
+    box-sizing: border-box;
+}

@@ -1,0 +1,23 @@
+.call-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: url('../images/bg-boost-desktop.svg') no-repeat center $primary-2;
+    background-size: cover;
+
+    margin-top: 80px;
+    padding: 1.2rem 0rem;
+
+    .header {
+        margin: 0;
+        padding: 0;
+        h3 {
+            font-size: 1.5em;
+            margin: .8rem 0rem;
+            padding: 0;
+            color: $white;
+        }
+    }
+
+}
