@@ -20,6 +20,11 @@
     }
 }
 
+.button-active {
+    background-color: $very-dark-violet;
+    color: $white;
+}
+
 .button-rounded {
     border-radius: 1.2rem;
 }
