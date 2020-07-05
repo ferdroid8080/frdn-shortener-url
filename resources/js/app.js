@@ -39,7 +39,7 @@ export default class App extends Component {
                         <Features>
                             {
                                 FEATURES_LIST.map(i => (
-                                    <FeaturesItem  featureClass={i.className} featureTitle={i.title}>
+                                    <FeaturesItem key={i.id} featureClass={i.className} featureTitle={i.title}>
                                         {i.content}
                                     </FeaturesItem>
                                 ))
