@@ -84,29 +84,68 @@
     }
 
 
-    .shortener-url {
-        border: 1px solid #ccc;
-        padding: 2rem;
-        width: 75%;
-        border-radius: .9rem;
-
-        background: url('../../images/bg-shorten-desktop.svg') no-repeat center $primary-2;
-        background-size: cover;
-
+    .shortener-url-wrapper {
         position: absolute;
         top: -50px;
         left: 10%;
+        width: 75%;
 
-        .form-control {
-            input {
-                font: inherit;
-                color: $gray;
-                font-size: 1em;
-                padding: 1em;
-                border: none;
-                border-radius: .3rem;
-                box-sizing: border-box;
-                width: 100%;
+        .shortener-url {
+            padding: 2rem;
+            width: 100%;
+            border-radius: .9rem;
+
+            background: url('../../images/bg-shorten-desktop.svg') no-repeat center $primary-2;
+            background-size: cover;
+
+            box-sizing: border-box;
+
+            .form-control {
+                input {
+                    font: inherit;
+                    color: $gray;
+                    font-size: 1em;
+                    padding: 1em;
+                    border: none;
+                    border-radius: .3rem;
+                    box-sizing: border-box;
+                    width: 100%;
+                }
+            }
+        }
+
+        .shorten-links {
+            padding: .8rem;
+
+            ul.links {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                li {
+                    display: flex;
+                    margin: .5rem 0;
+                    align-items: center;
+                    justify-content: space-between;
+                    background-color: $white;
+                    border-radius: .6rem;
+                    div.original-link {
+                        margin: 0 1.2rem;
+                        p {
+                            font-weight: $font-small-weight;
+                            font-size: .8rem;
+                        }
+                    }
+                    div.shorten {
+                        display: flex;
+                        align-items: center;
+                        margin: 0 .8rem;
+                        p {
+                            margin: 0 .8rem;
+                            font-weight: $font-small-weight;
+                            font-size: .8rem;
+                        }
+                    }
+                }
             }
         }
     }
