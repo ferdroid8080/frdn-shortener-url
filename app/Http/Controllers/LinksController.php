@@ -78,7 +78,7 @@ class LinksController extends Controller
         try {
 
             if ( $request->input('orig_url') == null )
-                throw new Exception( __('validation.required') );
+                throw new Exception( __('validation.required', [ 'attribute' => 'original url' ]) );
 
             if ( ! Str::startsWith($request->input('orig_url'), 'http://') && ! Str::startsWith($request->input('orig_url'), 'https://') )
                 throw new Exception( __('validation.starts_with', [ 'attribute' => 'original url', 'values' => 'http://,https://' ]) );
