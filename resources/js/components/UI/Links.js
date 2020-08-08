@@ -39,8 +39,26 @@ class Links extends React.Component {
     render() {
         let copied = { ...this.state.linkCopied }
 
-        return (
-            <div className='shorten-links'>
+        let links = null
+
+        if (this.props.error) {
+            links = (
+                <div className="alert alert-danger">
+                    { this.props.error.message }
+                </div>
+            )
+        }
+
+        if (this.props.success) {
+            links = (
+                <div className="alert alert-success">
+                    { this.props.success }
+                </div>
+            )
+        }
+
+        if (this.props.links) {
+            links = (
                 <ul className="links">
                     {
                         this.props.links
@@ -68,6 +86,12 @@ class Links extends React.Component {
                             : null
                     }
                 </ul>
+            )
+        }
+
+        return (
+            <div className='shorten-links'>
+                {links}
             </div>
         )
     }
