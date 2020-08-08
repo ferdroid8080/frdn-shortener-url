@@ -13,7 +13,7 @@
 
 Route::get('/{route?}', function () {
     return view('main');
-})->where('route', '[0-9A-Za-z.\/?]+');
+})->where('route', '[0-9A-Za-z.\/?]');
 
 
 Route::get('/s/{query}', 'LinksController@getFullUrl');

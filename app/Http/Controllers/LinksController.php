@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Links;
 use App\LinksTracker;
+use Exception;
 use Illuminate\Http\Request;
 use Jenssegers\Agent\Agent;
 use Log;
+use Str;
 
 class LinksController extends Controller
 {
@@ -71,26 +73,38 @@ class LinksController extends Controller
 
     public function store(Request $request)
     {
+        $response = array('success' => true, 'message' => '');
 
-        $request->validate([
-            'orig_url' => 'required|starts_with:http://,https://',
-            'description' => 'required'
-        ]);
+        try {
 
-        $link = new Links();
+            if ( $request->input('orig_url') == null )
+                throw new Exception( __('validation.required') );
 
-        $shorten_url_generated = substr(md5(uniqid('frdn_', false)), 0, 8);
+            if ( ! Str::startsWith($request->input('orig_url'), 'http://') && ! Str::startsWith($request->input('orig_url'), 'https://') )
+                throw new Exception( __('validation.starts_with', [ 'attribute' => 'original url', 'values' => 'http://,https://' ]) );
 
-        $link->orig_url = $request->input('orig_url');
-        $link->description = $request->input('description');
-        $link->shortened_url = $shorten_url_generated;
 
-        if ( $link->save() ) {
-            return redirect('/new/link')->with('success', __('custom.create_controller_success', ['short' => url()->to('/' . $shorten_url_generated)]));
-        } else {
-            return redirect('/new/link')->withInput()->with('error', __('custom.create_controller_failed'));
+            $link = new Links();
+            $shorten_url_generated = substr(md5(uniqid('frdn_', false)), 0, 8);
+
+            $link->orig_url = $request->input('orig_url');
+            $link->description = $request->input('description');
+            $link->shortened_url = $shorten_url_generated;
+
+            if ( $link->save() ) {
+                $response['success'] = true;
+                $response['message'] = __('custom.create_controller_success', ['short' => url()->to('/s/' . $shorten_url_generated)]);
+            } else {
+                throw new Exception( __('custom.create_controller_failed') );
+            }
+
+        } catch(Exception $e) {
+            Log::debug('[ LinksController@store ] (at line '  . $e->getLine() . ') ' . $e->getMessage());
+            $response['success'] = false;
+            $response['message'] = $e->getMessage();
         }
 
+        return response()->json($response);
     }
 
 
