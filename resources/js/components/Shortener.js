@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import Input from './UI/Input'
 import Button from './UI/Button'
 import Links from './UI/Links'
 
@@ -76,12 +77,15 @@ class Shortener extends Component {
             <div className='shortener-url-wrapper'>
                 <div className="shortener-url">
                     <form onSubmit={this.formSubmittedHandler.bind(this)} className='form-horizontal'>
-                        <div className="form-control">
-                            <input type="text" placeholder='Type a link you want to get a shorten url' autoComplete='off' name='orig_url' onChange={this.inputChangedHandler.bind(this)} value={this.state.form.orig_url} />
-                        </div>
-                        <div className="form-control">
-                            <input type="text" placeholder='Place a description for the shortened link' autoComplete='off' name='description' onChange={this.inputChangedHandler.bind(this)} value={this.state.form.description} />
-                        </div>
+                        <Input
+                            inputType='text' placeholder='Type a link you want to get a shorten url'
+                            name='orig_url' changed={this.inputChangedHandler.bind(this)}
+                            value={this.state.form.orig_url} />
+                        <Input
+                            inputType='text'
+                            placeholder='Place a description for the shortened link'
+                            name='description' changed={this.inputChangedHandler.bind(this)}
+                            value={this.state.form.description} />
                         <Button classes={['button', 'button-primary', 'button-slightly-rounded', 'button-large-form']} disabled={this.state.formIsLoading}>Shorten It!</Button>
                     </form>
                 </div>
